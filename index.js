@@ -17,7 +17,7 @@ const spinner2 = ora({
 
 const provinces = require('./provinces')['86'];
 const pcodes = [];
-const target = 'http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/#{route}.html';
+const target = 'http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2017/#{route}.html';
 
 let cities = [];
 
@@ -34,10 +34,10 @@ let curCity = '';
 let curPCode = '';
 
 Object.keys(provinces).forEach(code => {
-    if (code !== '710000' && code !== '910000') {
+    // if (code !== '710000' && code !== '910000') {
         // 过滤掉港澳台
         pcodes.push(code.slice(0, 2));
-    }
+    // }
 });
 
 async function getCitiesByPCode (page, pcode) {
